@@ -2,7 +2,8 @@
 SQLyog Ultimate v9.50 
 MySQL - 5.5.5-10.1.16-MariaDB : Database - rumah_sakit
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -27,7 +28,7 @@ CREATE TABLE `dokter` (
   `alamat` varchar(100) DEFAULT NULL,
   `telpon` varchar(14) DEFAULT NULL,
   PRIMARY KEY (`kode_dokter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*Data for the table `dokter` */
 
@@ -44,7 +45,7 @@ CREATE TABLE `kamar` (
   PRIMARY KEY (`kode_kamar`),
   KEY `kode_kelas` (`kode_kelas`),
   CONSTRAINT `kamar_ibfk_1` FOREIGN KEY (`kode_kelas`) REFERENCES `kelas_kamar` (`kode_kelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*Data for the table `kamar` */
 
@@ -59,7 +60,7 @@ CREATE TABLE `kelas_kamar` (
   `kelas` varchar(10) DEFAULT NULL,
   `harga_permalam` int(11) DEFAULT NULL,
   PRIMARY KEY (`kode_kelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*Data for the table `kelas_kamar` */
 
@@ -84,7 +85,7 @@ CREATE TABLE `opname` (
   CONSTRAINT `opname_ibfk_1` FOREIGN KEY (`kode_pasien`) REFERENCES `pasien` (`kode_pasien`),
   CONSTRAINT `opname_ibfk_2` FOREIGN KEY (`kode_dokter`) REFERENCES `dokter` (`kode_dokter`),
   CONSTRAINT `opname_ibfk_3` FOREIGN KEY (`kode_kamar`) REFERENCES `kamar` (`kode_kamar`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+);
 
 /*Data for the table `opname` */
 
@@ -100,7 +101,7 @@ CREATE TABLE `pasien` (
   `alamat` varchar(100) DEFAULT NULL,
   `telpon` varchar(14) DEFAULT NULL,
   PRIMARY KEY (`kode_pasien`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*Data for the table `pasien` */
 
